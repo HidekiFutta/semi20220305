@@ -166,7 +166,7 @@ $isSend = true;
 
 <?php if($isSend):
   //受付番号：カウントアップ
-  $conn = "host=ec2-3-230-219-251.compute-1.amazonaws.com port=5432 dbname=d7mmugf289n5ol user=wwdgwynyievckz password=bac3249f96249a528949d80f7d095405efcb6e5f9898d60798a38ce155c03017";
+  $conn = "host=ec2-3-230-219-251.compute-1.amazonaws.com port=5432 dbname=dfbkketl37sb46 user=roytnotfcgqxlo password=bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
     
   $link = pg_connect($conn);
   if (!$link) {
