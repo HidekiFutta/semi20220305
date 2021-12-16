@@ -215,7 +215,7 @@
               var end2   = endObj2.getTime();
               var comment2 = "";
               if(end2 <= today){// 有効期限の範囲内
-                  comment2= "イベントは終了しました";
+                  comment2= "<font color='red'>イベントは終了しました</font>";
                   document.getElementById("edit_area2").innerHTML = comment2;
                   document.getElementById("comf").disabled = true;  //締切後押せなくする
               }
