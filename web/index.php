@@ -58,11 +58,11 @@
                         <td class="contact-body">
                             <label class="contact-keitai">
                                 <input type="radio" name="keitai" value="Web参加" checked="checked" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "Web参加" ){ echo 'checked'; } ?>>
-                                <span class="contact-skill-txt">Web参加（会員限定先着80名）</span>
+                                <span class="contact-skill-txt">Web参加　先着80名（当日まで受付可）</span>
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt">会場参加（先着20名)</span>
+                                <span class="contact-skill-txt">{comment}会場参加　会員限定先着20名（締切3月3日)</span>
                             </label>                        
                         </td>
                     </tr>
@@ -138,8 +138,7 @@
             
             <script language="JavaScript" type="text/javascript">
            // <!--
-              function CheckEmail_2(input){
-                
+              function CheckEmail_2(input){              
                 //IE対応の為変更
                 //var mail = email_2.value;
                 //メールフォームの値を取得
@@ -198,6 +197,18 @@
                       document.getElementById("nn").disabled = true;                 
                       document.getElementById("dn").disabled = true;                 
                       document.getElementById("bn").disabled = true;
+                  }
+              }
+              function checkdate(input){              
+                  var todayObj = new Date();
+                  var today   = todayObj.getTime();
+                  var endObj   = new Date('2019-09-30T23:59:59');  // 終了日の指定
+                  var end   = endObj.getTime();
+                  var comment ="";
+                  if(today <= end){// 有効期限の範囲内
+                      comment= "会場参加　会員限定先着20名（締切3月3日)";
+                  }else{
+                      comment= "会場参加は締め切りました（締切3月3日)";
                   }
               }
             // -->
