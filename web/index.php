@@ -211,7 +211,7 @@
                   document.getElementById("kaijyo").disabled = true;  //締切後押せなくする
               }
               //イベント終了後
-              var endObj2   = new Date('2022-03-05T23:59:59');  // 開催日の指定 '2021-12-16T16:36:59'
+              var endObj2   = new Date('2021-12-16T16:36:59');  // 開催日の指定 '2021-12-16T16:36:59'2022-03-05T23:59:59
               var end2   = endObj2.getTime();
               var comment2 = "";
               if(end2 <= today){// 有効期限の範囲内
