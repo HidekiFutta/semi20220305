@@ -12,8 +12,8 @@
   
   //参考HP　https://designsupply-web.com/media/programming/1642/
   //任意入力項目の配列が空の場合のエラーメッセージ制御
-  error_reporting(0); //エラー非表示
-  //error_reporting(E_ALL ^ E_NOTICE);
+  //error_reporting(0); //エラー非表示
+  error_reporting(E_ALL ^ E_NOTICE);
 
   require '../vendor/autoload.php';
 
@@ -132,7 +132,8 @@ $email = new \SendGrid\Mail\Mail();
     $email->addContent("text/html", $messageUser);
     $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
     try {
-      $response = $sendgrid->send($email);
+      echo "OK";
+      //$response = $sendgrid->send($email);
       //print $response->statusCode() . "\n";
       //print_r($response)->headers());
       //print $response->body() . "\n";    
@@ -148,7 +149,8 @@ $email = new \SendGrid\Mail\Mail();
   $email->addContent("text/plain", $messageAdmin);
   $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
   try {
-    $response = $sendgrid->send($email);
+    echo "OK2";
+    //$response = $sendgrid->send($email);
     //print $response->statusCode() . "\n";
     //print_r($response->headers());
     //print $response->body() . "\n";
