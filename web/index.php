@@ -203,13 +203,13 @@
               var today   = todayObj.getTime();
               var endObj   = new Date('2019-09-30T23:59:59');  // 終了日の指定
               var end   = endObj.getTime();
-              var comment = document.getElementById("edit_area");
+              var comment = "";
               if(today <= end){// 有効期限の範囲内
                   comment= "会場参加　会員限定先着20名（締切3月3日)";
               }else{
                   comment= "会場参加は締め切りました（締切3月3日)";
               }
-              comment.innerHTML = "comment";
+              document.getElementById("edit_area").innerHTML = "commentdesu" ;
               
             // -->
             </script>            
