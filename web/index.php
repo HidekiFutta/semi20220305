@@ -61,7 +61,7 @@
                                 <span class="contact-skill-txt">Web参加　先着80名（当日まで受付可）</span>
                             </label>
                             <label class="contact-skill">
-                                <input type="radio" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
+                                <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
                                 <span class="contact-skill-txt" id="edit_area"></span>
                             </label>                        
                         </td>
@@ -201,13 +201,14 @@
               }                
               var todayObj = new Date();
               var today   = todayObj.getTime();
-              var endObj   = new Date('2021-12-16T16:25:00');  // 終了日の指定
+              var endObj   = new Date('2021-03-03T23:59:59');  // 終了日の指定
               var end   = endObj.getTime();
               var comment = "";
               if(today <= end){// 有効期限の範囲内
                   comment= "会場参加　会員限定先着20名（締切3月3日)";
               }else{
                   comment= "会場参加　締め切りました（締切3月3日)";
+                  document.getElementById("kaijyo").disabled = true;  
               }
               document.getElementById("edit_area").innerHTML = comment;
               
