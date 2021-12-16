@@ -61,7 +61,7 @@
                                 <span class="contact-skill-txt">Web参加　先着80名（当日まで受付可）</span>
                             </label>
                             <label class="contact-skill">
-                                <input type="radio" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?> id="edit_area"/>
+                                <input type="radio" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?> id='edit_area'/>
                                 <span class="contact-skill-txt" >会場参加　会員限定先着20名（締切3月3日)</span>
                             </label>                        
                         </td>
