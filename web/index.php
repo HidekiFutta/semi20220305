@@ -199,7 +199,7 @@
                       document.getElementById("bn").disabled = true;
                   }
               }
-              function checkdate(input){              
+              var myfunc = function (){              
                   var todayObj = new Date();
                   var today   = todayObj.getTime();
                   var endObj   = new Date('2019-09-30T23:59:59');  // 終了日の指定
