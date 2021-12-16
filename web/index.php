@@ -62,7 +62,7 @@
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt"> <div id='edit_area'>サンプル</div></span>
+                                <span class="contact-skill-txt"> <div id='edit_area'>会場参加　会員限定先着20名（締切3月3日)</div></span>
                             </label>                        
                         </td>
                     </tr>
@@ -204,13 +204,13 @@
                   var today   = todayObj.getTime();
                   var endObj   = new Date('2019-09-30T23:59:59');  // 終了日の指定
                   var end   = endObj.getTime();
-                  var comment ="";
+                  var comment = document.getElementById("edit_area");
                   if(today <= end){// 有効期限の範囲内
                       comment= "会場参加　会員限定先着20名（締切3月3日)";
                   }else{
                       comment= "会場参加は締め切りました（締切3月3日)";
                   }
-                  edit_area.innerHTML = "comment";
+                  comment.innerHTML = "comment";
               }
             // -->
             </script>            
