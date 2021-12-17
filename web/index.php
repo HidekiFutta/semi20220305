@@ -25,7 +25,7 @@
     </head>
     <body>
         <div class="contact">
-            <h1 class="contact-ttl" id="edit_area2">明日から役立つセミナー登録フォーム</h1>
+            <h1 class="contact-ttl" id="edit_area2">明日から役立つセミナー 登録フォーム</h1>
          
             <form method="post" action="./check.php">
                 <table class="contact-table">
