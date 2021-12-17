@@ -164,13 +164,13 @@ body {
 {
 	.contact 
 	{
-		width: 390px;
+		width: 320px;
         margin: 0 auto;
         padding: 5px 0;
 	}
 
     .contact-ttl {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
     text-align: center;
@@ -201,9 +201,9 @@ body {
 }
 
 .contact-item {
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
-    width: 28%;
+    width: 28;
     background-color: #1ee9e124;
 }
 
@@ -227,7 +227,7 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    max-width: 300px;
+    max-width: 240px;
 }
 
 .form-text2 {
@@ -287,7 +287,7 @@ body {
 .form-textarea {
     width: 100%;
     padding: 5px;
-    height: 80px;
+    height: 100px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
