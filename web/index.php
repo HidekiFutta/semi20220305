@@ -62,7 +62,7 @@
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着20名（締切3月3日)</span>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着20名（締切3月2日)</span>
                             </label>                        
                         </td>
                     </tr>
@@ -202,11 +202,11 @@
               //会場参加の締め切り日設定
               var todayObj = new Date(); 
               var today   = todayObj.getTime();
-              var endObj   = new Date('2022-03-03T23:59:59');  // 締切日の指定 '2021-12-16T16:36:59'
+              var endObj   = new Date('2022-03-02T23:59:59');  // 締切日の指定 '2021-12-16T16:36:59'
               var end   = endObj.getTime();
               var comment = "";
               if(end <= today){// 有効期限の範囲外
-                  comment= "<font color='red'>会場参加　締め切りました（締切3月3日)</font>";
+                  comment= "<font color='red'>会場参加　締め切りました（締切3月2日)</font>";
                   document.getElementById("edit_area").innerHTML = comment;
                   document.getElementById("kaijyo").disabled = true;  //締切後押せなくする
               }
