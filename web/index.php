@@ -87,7 +87,7 @@
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" name="区分" value="一般の方" onclick="connecttext4('textforscb3',this.checked);" <?php if( !empty($_POST['区分']) && $_POST['区分'] === "一般の方" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt">一般の方（府民公開講座のみ無料で参加できます）</span>
+                                <p><span class="contact-skill-txt">一般の方（府民公開講座のみ無料で参加できます）</span></p>
                             </label>
                         </td>
                     </tr>
