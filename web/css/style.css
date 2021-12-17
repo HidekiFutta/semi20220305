@@ -5,7 +5,7 @@
 }
 
 body {
-    color: #00ff00a2;
+    color: #333;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
@@ -16,21 +16,6 @@ body {
         margin: 0 auto;
         padding: 60px 0;
     }
-}
-
-/* スマホだけに適用するCSS */
-@media screen and ( max-width:479px )
-{
-    .body {
-        color: #00ff00a2;
-        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    }
-	.contact 
-	{
-		width: 900px;
-        margin: 0 auto;
-        padding: 30px 0;
-	}
 }
 
 .contact-ttl {
@@ -73,7 +58,6 @@ body {
 .contact-body {
     width: 70%;
 }
-
 
 .contact-body2 {
     width: 70%;
@@ -172,4 +156,36 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     cursor: pointer;
+}
+
+/* スマホだけに適用するCSS */
+@media screen and ( max-width:479px )
+{
+    .body {
+        color: #00ff00a2;
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    }
+	.contact 
+	{
+		width: 900px;
+        margin: 0 auto;
+        padding: 30px 0;
+	}
+
+    .contact-submit {
+        width: 250px;
+        background-color: rgb(248, 6, 107);
+        color: #fff;
+        font-weight: bold;
+        display: block;
+        margin: 0 auto;
+        font-size: 16px;
+        padding: 15px;
+        border-radius: 100vh;
+        border: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+    }
 }
