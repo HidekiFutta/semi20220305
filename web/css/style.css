@@ -164,15 +164,15 @@ body {
 {
 	.contact 
 	{
-		width: 400px;
+		width: 360px;
         margin: 0 auto;
-        padding: 10px 0;
+        padding: 5px 0;
 	}
 
     .contact-ttl {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
@@ -184,26 +184,27 @@ body {
 
 .contact-item,
 .contact-body {
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
 }
 
 .contact-item,
 .contact-body2 {
-    padding: 10px;
+    padding: 5x;
     border: 1px solid #ccc;
 }
 
 .contact-item,
 .contact-body3 {
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
 }
 
 .contact-item {
-    text-align: left;
+    font-size: 15px;
+    text-align: center;
     width: 30%;
-    background-color: #eee;
+    background-color: #1ee9e124;
 }
 
 .contact-body {
@@ -220,7 +221,7 @@ body {
 
 .form-text {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
@@ -231,7 +232,7 @@ body {
 
 .form-text2 {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
@@ -242,13 +243,13 @@ body {
 
 .form-text3 {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    max-width: 100px;
+    max-width: 80px;
 }
 
 .contact-sex + .contact-sex {
@@ -261,8 +262,8 @@ body {
 }
 
 .form-select {
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 30px;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -273,18 +274,19 @@ body {
 }
 
 .contact-skill + .contact-skill {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .contact-skill-txt {
     display: inline-block;
     margin-left: 5px;
+    font-size: 12px;
 }
 
 .form-textarea {
     width: 100%;
-    padding: 10px;
-    height: 100px;
+    padding: 5px;
+    height: 80px;
     border-radius: 5px;
     border: 1px solid #ccc;
     appearance: none;
@@ -300,7 +302,7 @@ body {
     display: block;
     margin: 0 auto;
     font-size: 16px;
-    padding: 15px;
+    padding: 12px;
     border-radius: 100vh;
     border: none;
     appearance: none;
