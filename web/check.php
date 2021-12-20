@@ -7,7 +7,7 @@
     header('Location: ./index.php');
     echo "unok1";
   }
-  $_SESSION["title"]= $_SESSION["title"];
+  
   //タイムスタンプ
   date_default_timezone_set('Asia/Tokyo');
   $timeStamp = time();
@@ -35,6 +35,7 @@
   $text_value9 = $_POST['Rナンバー'];
   
   $text_value10 = $_POST['備考'];
+  $title = $_SESSION["title"];
   
   //トークンチェック・POSTからSESSIONへ受け渡し
   if($_SESSION["input_token"] === $_POST["input_token"]) {
@@ -206,7 +207,7 @@
                 
                 <?php
                   //データを配列に
-                  $list = array ($a,$text_value0,$text_value1, $text_value2, $text_value3, $text_value4,$text_value5,$text_value6,$text_value7,$text_value8,$text_value9,$text_value10);
+                  $list = array ($a,$text_value0,$text_value1, $text_value2, $text_value3, $text_value4,$text_value5,$text_value6,$text_value7,$text_value8,$text_value9,$text_value10,$title);
                   mb_convert_variables('Shift_JIS', 'UTF-8', $list);
                 ?>            
               <?php endif; ?>
