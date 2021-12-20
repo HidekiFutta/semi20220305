@@ -1,15 +1,13 @@
 <form method="post" action="./check.php">
   <?php
 
-
-    $title = "明日から役立つセミナー"; 
-    $kaisaibi="2022-03-05T17:59:59";
-    $limit="2022-03-02T23:59:59";
-    $simekiri="締切3月2日";
-    $k_teiinn="20";
-    $w_teiinn="80";
-
-
+    //イベントによって変更する6箇所
+    $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意　39行目に
+    $kaisaibi="2022-03-05T17:59:59";  //開催終了後（時間）に受付を停止　225行目
+    $limit=   "2022-03-02T23:59:59";  //締切日の24時に締め切る　216行目
+    $simekiri="締切3月2日";            //76,220行目
+    $k_teiinn="20";                   //会場の定員　76行目
+    $w_teiinn="80";                   //Webの定員　72行目
 
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
     //　CSRF対策のワンタイムトークン発行    http://localhost/form.php
@@ -38,9 +36,10 @@
     </head>
     <body>
         <div class="contact">
-            <h1 class="contact-ttl" id="edit_area2"><?php echo $title?> 登録フォーム</h1>
+            
          
             <form method="post" action="./check.php">
+            <h1 class="contact-ttl" id="edit_area2"><?php echo $title?> 登録フォーム</h1>
                 <table class="contact-table">
                     <tr>
                         <th class="contact-item">氏　名</th>
@@ -115,7 +114,7 @@
                         <th class="contact-item">大放技番号（大放技会員のみ）</th>
                         <td class="contact-body">
                             <input type="number" name="Dナンバー" id ="dn" class="form-text3" value="<?php if( !empty($_POST['Dナンバー']) ){ echo $_POST['Dナンバー']; } ?>"/>
-                            <font size="2"> 協賛会員は"0"</font>
+                             <font size="2"> 協賛会員は"0"</font>
                         </td>
                     </tr>
                     
