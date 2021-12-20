@@ -9,12 +9,13 @@
     $k_teiin="20";                   //会場の定員　76行目
     $w_teiin="80";                   //Webの定員　72行目
     $conn = "host=ec2-3-230-219-251.compute-1.amazonaws.com port=5432 dbname=dfbkketl37sb46 user=roytnotfcgqxlo password=bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";//
+    //Heroku- AppName- Resources- Herok Postgres- Database Credentials から
     $Host = "ec2-3-230-219-251.compute-1.amazonaws.com"; 
     $Database ="dfbkketl37sb46";
     $User = "roytnotfcgqxlo";
     $Port = "5432";
     $Password ="bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
-    $conn2 = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."password=".$Password;
+    $conn2 = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     echo $conn;
     echo $conn2;
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
@@ -35,6 +36,8 @@
     $_SESSION["simekiri"] = $simekiri;
     $_SESSION["k_teiin"] = $k_teiin;
     $_SESSION["w_teiin"] = $w_teiin;
+    $_SESSION["conncon"] = $conn2;
+
   ?>
    
  <!DOCTYPE html>  
