@@ -2,12 +2,12 @@
   session_start();
   
   $_SESSION["input_token"] = $_POST["input_token"];//なぜか$_SESSION["input_token"]の値が変わってしまう、強制的に
-  $_SESSION["title"] = $_POST["title"];
+  
   if(!$_POST){
     header('Location: ./index.php');
     echo "unok1";
   }
-  echo $title;
+  echo $_SESSION["title"];
   //タイムスタンプ
   date_default_timezone_set('Asia/Tokyo');
   $timeStamp = time();
