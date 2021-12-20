@@ -2,20 +2,20 @@
   <?php
 
     //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
-    $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意！　39行目に
-    $kaisaibi="2022-03-05T17:59:59";  //開催終了後（時間）に受付を停止　225行目
-    $limit=   "2022-03-02T23:59:59";  //締切日の24時に締め切る　216行目
-    $simekiri="締切3月2日";            //76,220行目
-    $k_teiin="20";                    //会場の定員　76行目
-    $w_teiin="80";                    //Webの定員　 72行目
+    $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意！　56行目に代入
+    $kaisaibi="2022-03-05T17:59:59";  //開催終了後（時間）に受付を停止　242行目に代入
+    $limit=   "2022-03-02T23:59:59";  //締切日の24時に締め切る　233行目に代入
+    $simekiri="締切3月2日";            //93,237行目に代入
+    $k_teiin ="20";                   //会場の定員　93行目に代入
+    $w_teiin ="80";                   //Webの定員　 89行目に代入
     //Zoom URL
     $zoom = "https://us02web.zoom.us/meeting/register/tZMtde-prTMqGdejcSWAxjq9dl0NJ_sMzdko";
     //Heroku- AppName- Resources- Herok Postgres- Database Credentials から
-    $Host = "ec2-3-230-219-251.compute-1.amazonaws.com"; 
-    $Database ="dfbkketl37sb46";
-    $User = "roytnotfcgqxlo";
-    $Port = "5432";
-    $Password ="bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
+    $Host     = "ec2-3-230-219-251.compute-1.amazonaws.com"; 
+    $Database = "dfbkketl37sb46";
+    $User     = "roytnotfcgqxlo";
+    $Port     = "5432";
+    $Password = "bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
     //以上計12か所イベントごとに要変更
     $conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     
@@ -31,11 +31,11 @@
     $_SESSION["input_token"] = $token; //グローバル変数らしい  
     
     $_SESSION["title"] = $title;
-    $_SESSION["kaisaibi"] = $kaisaibi;
-    $_SESSION["limit"] = $limit;
-    $_SESSION["simekiri"] = $simekiri;
-    $_SESSION["k_teiin"] = $k_teiin;
-    $_SESSION["w_teiin"] = $w_teiin;
+    //$_SESSION["kaisaibi"] = $kaisaibi;
+    //$_SESSION["limit"] = $limit;
+    //$_SESSION["simekiri"] = $simekiri;
+    //$_SESSION["k_teiin"] = $k_teiin;
+    //$_SESSION["w_teiin"] = $w_teiin;
     $_SESSION["zoom"] = $zoom;
     $_SESSION["conncon"] = $conn;
   ?>
