@@ -148,7 +148,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="contact-item">領収書番号（非会員のかた）</th>
+                        <th class="contact-item">領収書番号（非会員の方）</th>
                         <td class="contact-body">
                             <input type="number" id ="textforscb3" required="required" name="Rナンバー" class="form-text3" value= "<?php if( !empty($_POST['Rナンバー']) ){ echo $_POST['Rナンバー']; } ?>" disabled="disabled"/>　<font size="2">ハイフンは不要</font>
                         </td>
