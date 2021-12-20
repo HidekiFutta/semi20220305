@@ -205,6 +205,7 @@
                 <?php endif; ?>
                 
                 <input type="hidden" name="a" value="<?php echo $a; ?>">
+                <input type="hidden" name="T" value="<?php echo $title; ?>">
                 
                 <?php
                   //データを配列に
