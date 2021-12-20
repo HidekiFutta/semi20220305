@@ -1,12 +1,23 @@
 <form method="post" action="./check.php">
   <?php
+
+
+    $title = "明日から役立つセミナー"; 
+    $kaisaibi="2022-03-05T17:59:59";
+    $limit="2022-03-02T23:59:59";
+    $simekiri="締切3月2日";
+    $k_teiinn="20";
+    $w_teiinn="80";
+
+
+
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
     //　CSRF対策のワンタイムトークン発行    http://localhost/form.php
 
     $randomNumber = openssl_random_pseudo_bytes(16);
     $token = bin2hex($randomNumber);
     echo '<input name="input_token" type="hidden" value="'.$token.'">';
-    $title = "明日から役立つセミナー";  
+     
     //if(!empty($_POST["email_1"]) ){ echo $_POST["email_1"]; }
     //トークンをセッションに格納
     session_start();
@@ -60,11 +71,11 @@
                         <td class="contact-body">
                             <label class="contact-keitai">
                                 <input type="radio" name="keitai" value="Web参加" checked="checked" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "Web参加" ){ echo 'checked'; } ?>>
-                                <span class="contact-skill-txt">Web参加　先着80名（当日まで受付可）</span>
+                                <span class="contact-skill-txt">Web参加　先着<?php $w_teiinn?>名（当日まで受付可）</span>
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着20名（締切3月2日)</span>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiinn?>名（<?php $simekiri ?>)</span>
                             </label>                        
                         </td>
                     </tr>
@@ -130,7 +141,7 @@
                     <tr>
                         <th class="contact-item">備　考</th>
                         <td class="contact-body">
-                            <textarea name="備考" class="form-textarea" placeholder="何かご要望やご意見・ご質問等があればご記入ください"><?php if(!empty($_POST["備考"])) { echo $_POST["備考"]; }?></textarea>
+                            <textarea name="備考" class="form-textarea" placeholder="何かご意見やご要望・ご質問等があればご記入ください"><?php if(!empty($_POST["備考"])) { echo $_POST["備考"]; }?></textarea>
                         </td>
                     </tr>
                 </table>
@@ -204,16 +215,16 @@
               //会場参加の締め切り日設定
               var todayObj = new Date(); 
               var today   = todayObj.getTime();
-              var endObj   = new Date('2022-03-02T23:59:59');  // 締切日の指定 '2021-12-16T16:36:59'
+              var endObj   = new Date($limit);  // 締切日の指定 '2021-12-16T16:36:59'
               var end   = endObj.getTime();
               var comment = "";
               if(end <= today){// 有効期限の範囲外
-                  comment= "<font color='red'>会場参加　締め切りました（締切3月2日)</font>";
+                  comment= "<font color='red'>会場参加　締め切りました（<?php $simekiri ?>)</font>";
                   document.getElementById("edit_area").innerHTML = comment;
                   document.getElementById("kaijyo").disabled = true;  //締切後押せなくする
               }
               //イベント終了後
-              var endObj2   = new Date('2022-03-05T17:59:59');  // 開催日を指定 '2021-12-16T16:36:59'
+              var endObj2   = new Date($kaisaibi);  // 開催日を指定 '2021-12-16T16:36:59'
               var end2   = endObj2.getTime();
               var comment2 = "";
               if(end2 <= today){// 有効期限の範囲外
