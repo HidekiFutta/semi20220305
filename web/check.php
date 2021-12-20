@@ -51,7 +51,6 @@
   // https://www.javadrive.jp/php/postgresql/index5.html
   $conn = $_SESSION["conncon"];
   //$conn = "host=ec2-3-230-219-251.compute-1.amazonaws.com port=5432 dbname=dfbkketl37sb46 user=roytnotfcgqxlo password=bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
-  $_SESSION["conncon2"] = $conn;
   
   $link = pg_connect($conn);
   if (!$link) {
@@ -84,6 +83,7 @@
   //if ($close_flag){
   //    print('切断に成功しました。<br>');
   //}
+  $_SESSION["conncon2"] = $conn;
 ?>
 
 <!DOCTYPE html>  
