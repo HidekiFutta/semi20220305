@@ -7,7 +7,7 @@
     header('Location: ./index.php');
     echo "unok1";
   }
-  echo $_SESSION["title"];
+  $_SESSION["title"]= $_SESSION["title"];
   //タイムスタンプ
   date_default_timezone_set('Asia/Tokyo');
   $timeStamp = time();
