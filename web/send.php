@@ -26,6 +26,7 @@
   //$weekFormat = "（".$week[date('w',$timeStamp)]."）";
   $outputDate = $dateFormatYMD.$dateFormatHIS;
   $conn = $_SESSION["conncon2"];
+  $ZoomURL = $_SESSION["zoom"];
   //XSS対策用サニタイズ
   
   function h($str) {
@@ -48,7 +49,6 @@
   $radio = h($_SESSION['ブロック']);
   $checkbox = h($_SESSION['Rナンバー']);
   $textarea = h($_SESSION['備考']);
-  $ZoomURL = "https://us02web.zoom.us/meeting/register/tZMtde-prTMqGdejcSWAxjq9dl0NJ_sMzdko";
   $number =  rtrim($keitai, '参加')."：".$count;
   
   //Web参加と会場参加で案内文を切り分ける：ヒアドキュメント内に表示する文面

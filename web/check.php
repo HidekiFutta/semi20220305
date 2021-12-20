@@ -35,6 +35,7 @@
   $text_value9 = $_POST['Rナンバー'];
   $text_value10 = $_POST['備考'];
   $title = $_SESSION["title"];
+  $zoom = $_SESSION["zoom"];
   $conn = $_SESSION["conncon"];
   
   //トークンチェック・POSTからSESSIONへ受け渡し
@@ -55,7 +56,7 @@
   $link = pg_connect($conn);
   if (!$link) {
     print('サーバーに接続できませんでした。<br>');
-    print('受付番号が正確ではありませんが登録は問題ありません。<br>');
+    print('再度お試しください。同じ結果なら、itdrive@daihougi.ne.jpまでご連絡ください。<br>');
    }
   pg_set_client_encoding("sjis");
     
@@ -83,6 +84,7 @@
   //if ($close_flag){
   //    print('切断に成功しました。<br>');
   //}
+  $_SESSION["zoom"] = $zoom;
   $_SESSION["conncon2"] = $conn; // send.php に値を渡す
 ?>
 
