@@ -6,10 +6,12 @@
     $randomNumber = openssl_random_pseudo_bytes(16);
     $token = bin2hex($randomNumber);
     echo '<input name="input_token" type="hidden" value="'.$token.'">';
+    $title = "明日から役立つセミナー";  
     //if(!empty($_POST["email_1"]) ){ echo $_POST["email_1"]; }
     //トークンをセッションに格納
     session_start();
-    $_SESSION["input_token"] = $token; //グローバル変数らしい    
+    $_SESSION["input_token"] = $token; //グローバル変数らしい  
+    
   ?>
    
  <!DOCTYPE html>  
@@ -25,7 +27,7 @@
     </head>
     <body>
         <div class="contact">
-            <h1 class="contact-ttl" id="edit_area2">明日から役立つセミナー 登録フォーム</h1>
+            <h1 class="contact-ttl" id="edit_area2"><?php $title?> 登録フォーム</h1>
          
             <form method="post" action="./check.php">
                 <table class="contact-table">

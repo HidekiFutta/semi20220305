@@ -36,7 +36,7 @@
   //$checkboxArray = implode(",",$_SESSION['スキル']);
 
   //メール本文内に表示するデータの変数化
-  $event = "明日から役立つセミナー";
+  $event = $title;//"明日から役立つセミナー";
   $count = h($_POST["a"]);
   $text = h($_SESSION['input_text']);
   $kana = h($_SESSION['所属']);
