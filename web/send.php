@@ -25,7 +25,7 @@
   $dateFormatHIS = date('H時i分s秒',$timeStamp);
   //$weekFormat = "（".$week[date('w',$timeStamp)]."）";
   $outputDate = $dateFormatYMD.$dateFormatHIS;
-
+  $conn2 = $_SESSION["conncon2"];
   //XSS対策用サニタイズ
   
   function h($str) {
@@ -240,7 +240,9 @@ $isSend = true;
               お送りましたので，内容をご確認下さい．
               
               </font></p>
-							<p></p>
+							<p><?php echo h($conn); ?></p>
+              <p><?php echo h($conn2); ?></p>
+              <p></p>
 							<p>なお，確認メールが届かない場合は，下記までご連絡下さい．<br>
 							</p>
 							<p><br>
