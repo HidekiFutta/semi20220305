@@ -20,7 +20,7 @@
   $text_value3 = $_POST['email_1'];
   $text_value4 = $_POST['keitai'];
   $text_value5 = $_POST['区分'];
-
+  
   if(empty($_POST['Nナンバー'])) {
     $_POST['Nナンバー'] = "****";}
   $text_value6 = $_POST['Nナンバー'];
@@ -35,7 +35,8 @@
   $text_value9 = $_POST['Rナンバー'];
   $text_value10 = $_POST['備考'];
   $title = $_SESSION["title"];
-  
+  $conn = $_SESSION["conncon"];
+  eco = $conn
   //トークンチェック・POSTからSESSIONへ受け渡し
   if($_SESSION["input_token"] === $_POST["input_token"]) {
     $_SESSION = $_POST;
@@ -49,13 +50,12 @@
   // https://devcenter.heroku.com/ja/articles/getting-started-with-php?singlepage=true
   // https://db.just4fun.biz/?PHP/PostgreSQL%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E3%83%BBpg_connect
   // https://www.javadrive.jp/php/postgresql/index5.html
-  $conn = $_SESSION["conncon"];
   //$conn = "host=ec2-3-230-219-251.compute-1.amazonaws.com port=5432 dbname=dfbkketl37sb46 user=roytnotfcgqxlo password=bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
   
   $link = pg_connect($conn);
   if (!$link) {
     print('サーバーに接続できませんでした。<br>');
-    print('受付番号が正確ではありませんが登録はもんだありません。<br>');
+    print('受付番号が正確ではありませんが登録は問題ありません。<br>');
    }
   pg_set_client_encoding("sjis");
     
@@ -84,6 +84,7 @@
   //    print('切断に成功しました。<br>');
   //}
   $_SESSION["conncon2"] = $conn;
+  echo $_SESSION["conncon2"];
 ?>
 
 <!DOCTYPE html>  
