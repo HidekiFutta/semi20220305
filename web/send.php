@@ -36,6 +36,7 @@
   //$checkboxArray = implode(",",$_SESSION['スキル']);
 
   //メール本文内に表示するデータの変数化
+  echo $_SESSION["title"];
   $event = h($_SESSION["title"]);//"明日から役立つセミナー";
   $count = h($_POST["a"]);
   $text = h($_SESSION['input_text']);
@@ -50,7 +51,7 @@
   $textarea = h($_SESSION['備考']);
   $ZoomURL = "https://us02web.zoom.us/meeting/register/tZMtde-prTMqGdejcSWAxjq9dl0NJ_sMzdko";
   $number =  rtrim($keitai, '参加')."：".$count;
-  
+  echo $event;
   //Web参加と会場参加で案内文を切り分ける：ヒアドキュメント内に表示する文面
   if( $keitai =="Web参加"){
     $announce ="・Web参加の方は次のボタンを押してZoomに登録してください。<br>　　 こちら　⇒　<a href='$ZoomURL'>Zoom登録";}
