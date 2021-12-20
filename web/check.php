@@ -36,7 +36,7 @@
   $text_value10 = $_POST['備考'];
   $title = $_SESSION["title"];
   $conn = $_SESSION["conncon"];
-  echo $conn;
+  
   //トークンチェック・POSTからSESSIONへ受け渡し
   if($_SESSION["input_token"] === $_POST["input_token"]) {
     $_SESSION = $_POST;
@@ -83,8 +83,7 @@
   //if ($close_flag){
   //    print('切断に成功しました。<br>');
   //}
-  $_SESSION["conncon2"] = $conn;
-  echo $_SESSION["conncon2"];
+  $_SESSION["conncon2"] = $conn; // send.php に値を渡す
 ?>
 
 <!DOCTYPE html>  

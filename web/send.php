@@ -25,7 +25,7 @@
   $dateFormatHIS = date('H時i分s秒',$timeStamp);
   //$weekFormat = "（".$week[date('w',$timeStamp)]."）";
   $outputDate = $dateFormatYMD.$dateFormatHIS;
-  $conn2 = $_SESSION["conncon2"];
+  $conn = $_SESSION["conncon2"];
   //XSS対策用サニタイズ
   
   function h($str) {
@@ -169,7 +169,7 @@ $isSend = true;
 
 <?php if($isSend):
   //受付番号：カウントアップ
-  $conn = "host=ec2-3-230-219-251.compute-1.amazonaws.com port=5432 dbname=dfbkketl37sb46 user=roytnotfcgqxlo password=bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
+  //$conn = "host=ec2-3-230-219-251.compute-1.amazonaws.com port=5432 dbname=dfbkketl37sb46 user=roytnotfcgqxlo password=bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
     
   $link = pg_connect($conn);
   if (!$link) {
@@ -240,9 +240,7 @@ $isSend = true;
               お送りましたので，内容をご確認下さい．
               
               </font></p>
-							<p><?php echo "conn=".h($conn); ?></p>
-              <p><?php echo "conn=2".h($conn2); ?></p>
-              <p><?php echo $_SESSION["conncon2"]; ?></p>
+						  <p></p>
 							<p>なお，確認メールが届かない場合は，下記までご連絡下さい．<br>
 							</p>
 							<p><br>
