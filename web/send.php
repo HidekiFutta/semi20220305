@@ -240,9 +240,9 @@ $isSend = true;
               お送りましたので，内容をご確認下さい．
               
               </font></p>
-							<p><?php echo h($conn); ?></p>
-              <p><?php echo h($conn2); ?></p>
-              <p></p>
+							<p><?php echo "conn=".h($conn); ?></p>
+              <p><?php echo "conn=2".h($conn2); ?></p>
+              <p><?php echo $_SESSION["conncon2"]; ?></p>
 							<p>なお，確認メールが届かない場合は，下記までご連絡下さい．<br>
 							</p>
 							<p><br>
