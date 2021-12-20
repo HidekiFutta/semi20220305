@@ -6,8 +6,8 @@
     $kaisaibi="2022-03-05T17:59:59";  //開催終了後（時間）に受付を停止　225行目
     $limit=   "2022-03-02T23:59:59";  //締切日の24時に締め切る　216行目
     $simekiri="締切3月2日";            //76,220行目
-    $k_teiinn="20";                   //会場の定員　76行目
-    $w_teiinn="80";                   //Webの定員　72行目
+    $k_teiin="20";                   //会場の定員　76行目
+    $w_teiin="80";                   //Webの定員　72行目
 
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
     //　CSRF対策のワンタイムトークン発行    http://localhost/form.php
@@ -21,6 +21,12 @@
     session_start();
     $_SESSION["input_token"] = $token; //グローバル変数らしい  
     
+    $_SESSION["title"] = $title;
+    $_SESSION["kaisaibi"] = $kaisaibi;
+    $_SESSION["limit"] = $limit;
+    $_SESSION["simekiri"] = $simekiri;
+    $_SESSION["k_teiin"] = $k_teiin;
+    $_SESSION["w_teiin"] = $w_teiin;
   ?>
    
  <!DOCTYPE html>  
@@ -36,10 +42,9 @@
     </head>
     <body>
         <div class="contact">
-            
+            <h1 class="contact-ttl" id="edit_area2"><?php echo $title?> 登録フォーム</h1>
          
             <form method="post" action="./check.php">
-            <h1 class="contact-ttl" id="edit_area2"><?php echo $title?> 登録フォーム</h1>
                 <table class="contact-table">
                     <tr>
                         <th class="contact-item">氏　名</th>
@@ -70,11 +75,11 @@
                         <td class="contact-body">
                             <label class="contact-keitai">
                                 <input type="radio" name="keitai" value="Web参加" checked="checked" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "Web参加" ){ echo 'checked'; } ?>>
-                                <span class="contact-skill-txt">Web参加　先着<?php $w_teiinn?>名（当日まで受付可）</span>
+                                <span class="contact-skill-txt">Web参加　先着<?php $w_teiin?>名（当日まで受付可）</span>
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiinn?>名（<?php $simekiri ?>)</span>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（<?php $simekiri ?>)</span>
                             </label>                        
                         </td>
                     </tr>
