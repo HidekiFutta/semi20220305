@@ -87,7 +87,7 @@
                         <td class="contact-body">
                             <label class="contact-keitai">
                                 <input type="radio" name="keitai" value="Web参加" checked="checked" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "Web参加" ){ echo 'checked'; } ?>>
-                                <span class="contact-skill-txt">Web参加　先着<?php $w_teiin?>名（当日まで受付可）</span>
+                                <span class="contact-skill-txt">Web参加　先着<?php echo $w_teiin?>名（当日まで受付可）</span>
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
@@ -231,7 +231,7 @@
               //会場参加の締め切り日設定
               var todayObj = new Date(); 
               var today   = todayObj.getTime();
-              var endObj   = new Date(limit);  // 締切日の指定 '2021-12-16T16:36:59'
+              var endObj   = new Date({$limit});  // 締切日の指定 '2021-12-16T16:36:59'
               var end   = endObj.getTime();
               var comment = "";
               if(end <= today){// 有効期限の範囲外
