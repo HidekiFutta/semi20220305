@@ -35,6 +35,7 @@
   $text_value9 = $_POST['Rナンバー'];
   $text_value10 = $_POST['備考'];
   $title = $_SESSION["title"];
+  $Tanto_Address = $_SESSION["Tanto_Address"];
   $zoom = $_SESSION["zoom"];
   $conn = $_SESSION["conncon"];
   
@@ -84,6 +85,7 @@
   //if ($close_flag){
   //    print('切断に成功しました。<br>');
   //}
+  $_SESSION["Tanto_Address"] = $Tanto_Address;
   $_SESSION["zoom"] = $zoom;
   $_SESSION["conncon2"] = $conn; // send.php に値を渡す
 ?>

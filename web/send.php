@@ -27,6 +27,7 @@
   $outputDate = $dateFormatYMD.$dateFormatHIS;
   $conn = $_SESSION["conncon2"];
   $ZoomURL = $_SESSION["zoom"];
+  $E_Address = $_SESSION["Tanto_Address"];
   //XSS対策用サニタイズ
   
   function h($str) {
@@ -90,7 +91,7 @@
   　　 mail:  itdrive@daihougi.ne.jp<br>
   　までお問い合わせください。</p>
   <p>・また、イベントの内容については<br>
-  　　 mail: sahara@daihougi.ne.jp<br>
+  　　 mail: {$E_Address}<br>
   　までお問い合わせください。</p>
   
   </body>
@@ -146,7 +147,7 @@ $email = new \SendGrid\Mail\Mail();
   $email->setFrom("itdrive@daihougi.ne.jp", "大放技");
   $email->setSubject("大放技イベント受付");
   $email->addTo("hima71f@yahoo.co.jp", "User");
-  //$email->addTo("sahara@daihougi.ne.jp", "User");
+  //$email->addTo($E_Address, "User"); //担当者のアドレス
   $email->addContent("text/plain", $messageAdmin);
   $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
   try {
