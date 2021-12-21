@@ -91,7 +91,7 @@
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（<?php $limit2?>）</span>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（<?php $simekiri ?>)</span>
                             </label>                        
                         </td>
                     </tr>
