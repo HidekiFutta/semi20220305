@@ -18,7 +18,7 @@
     $Password = "bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
     //以上計12か所イベントごとに要変更
     //$test =date('n月j日',  strtotime($limit)); 
-    //echo $test;
+    echo $limit;
     $conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
@@ -228,7 +228,7 @@
                       document.getElementById("dn").disabled = true;                 
                       document.getElementById("bn").disabled = true;
                   }
-              }       
+              }      
               //会場参加の締め切り日設定
               var todayObj = new Date(); 
               var today   = todayObj.getTime();
