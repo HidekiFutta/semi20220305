@@ -231,7 +231,8 @@
               //会場参加の締め切り日設定
               var todayObj = new Date(); 
               var today   = todayObj.getTime();
-              var endObj   = new Date(<?php echo $limit; ?>);  // 締切日の指定 '2021-12-16T16:36:59'
+              var limitday = <?php echo $limit; ?>
+              var endObj   = new Date(limitday);  // 締切日の指定 '2021-12-16T16:36:59'
               var end   = endObj.getTime();
               var comment = "";
               if(end <= today){// 有効期限の範囲外
