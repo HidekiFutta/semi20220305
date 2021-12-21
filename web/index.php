@@ -8,8 +8,6 @@
     $simekiri="3月2日";               //93,237行目に代入
     $k_teiin ="20";                   //会場の定員　93行目に代入
     $w_teiin ="80";                   //Webの定員　 89行目に代入
-    $test =date('n月j日',  strtotime($limit));
-    echo $test;
     //Zoom URL
     $zoom = "https://us02web.zoom.us/meeting/register/tZMtde-prTMqGdejcSWAxjq9dl0NJ_sMzdko";
     //Heroku- AppName- Resources- Herok Postgres- Setting- Database Credentials から
@@ -19,6 +17,8 @@
     $Port     = "5432";
     $Password = "bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
     //以上計12か所イベントごとに要変更
+    $test =date('n月j日',  strtotime($limit)); 
+    echo $test;
     $conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
