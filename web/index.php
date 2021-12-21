@@ -17,8 +17,7 @@
     $Port     = "5432";
     $Password = "bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
     //以上計12か所イベントごとに要変更
-    $test =date('n月j日',  strtotime($limit)); 
-    echo $limit;
+    $limit2 =date('n月j日',  strtotime($limit)); 
     $conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
@@ -92,7 +91,7 @@
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（<?php $limit?>)</span>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（<?php $limit2?>）</span>
                             </label>                        
                         </td>
                     </tr>
@@ -232,11 +231,11 @@
               //会場参加の締め切り日設定
               var todayObj = new Date(); 
               var today   = todayObj.getTime();
-              var endObj   = new Date($limit);  // 締切日の指定 '2021-12-16T16:36:59'
+              var endObj   = new Date("$limit");  // 締切日の指定 '2021-12-16T16:36:59'
               var end   = endObj.getTime();
               var comment = "";
               if(end <= today){// 有効期限の範囲外
-                  comment= "<font color='red'>会場参加　締め切りました（<?php $simekiri ?>)</font>";
+                  comment= "<font color='red'>会場参加　締め切りました（<?php $limit2 ?>)</font>";
                   document.getElementById("edit_area").innerHTML = comment;
                   document.getElementById("kaijyo").disabled = true;  //締切後押せなくする
               }
