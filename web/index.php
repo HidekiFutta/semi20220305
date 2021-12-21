@@ -3,14 +3,16 @@
 
     //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
     $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意！　56行目に代入
-    $kaisaibi="2022-03-05T17:59:59";  //開催終了後（時間）に受付を停止　242行目に代入
+    $kaisaibi="2022-03-05T17:00:00";  //開催終了後（時間）に受付を停止　242行目に代入
     $limit=   "2022-03-02T23:59:59";  //締切日の24時に締め切る　233行目に代入
-    $simekiri="締切3月2日";            //93,237行目に代入
+    $simekiri="3月2日";               //93,237行目に代入
     $k_teiin ="20";                   //会場の定員　93行目に代入
     $w_teiin ="80";                   //Webの定員　 89行目に代入
+    $test =date('m月d日',  strtotime($limit));
+    echo $test;
     //Zoom URL
     $zoom = "https://us02web.zoom.us/meeting/register/tZMtde-prTMqGdejcSWAxjq9dl0NJ_sMzdko";
-    //Heroku- AppName- Resources- Herok Postgres- Database Credentials から
+    //Heroku- AppName- Resources- Herok Postgres- Setting- Database Credentials から
     $Host     = "ec2-3-230-219-251.compute-1.amazonaws.com"; 
     $Database = "dfbkketl37sb46";
     $User     = "roytnotfcgqxlo";
@@ -90,7 +92,7 @@
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（<?php $simekiri ?>)</span>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（締切<?php $simekiri ?>)</span>
                             </label>                        
                         </td>
                     </tr>
@@ -234,7 +236,7 @@
               var end   = endObj.getTime();
               var comment = "";
               if(end <= today){// 有効期限の範囲外
-                  comment= "<font color='red'>会場参加　締め切りました（<?php $simekiri ?>)</font>";
+                  comment= "<font color='red'>会場参加　締め切りました（締切<?php $simekiri ?>)</font>";
                   document.getElementById("edit_area").innerHTML = comment;
                   document.getElementById("kaijyo").disabled = true;  //締切後押せなくする
               }
