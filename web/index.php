@@ -1,11 +1,10 @@
 <form method="post" action="./check.php">
   <?php
 
-    //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
+    //イベントによって変更する5箇所 + ZoomURL + DataBaseのURI5つ
     $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意！　56行目に代入
     $kaisaibi="2022-03-05T17:00:00";  //開催終了後（時間）に受付を停止　242行目に代入
-    $limit=   "2021-03-02T23:59:59";  //締切日の24時に締め切る　233行目に代入
-    $simekiri="3月2日";               //93,237行目に代入
+    $limit=   "2022-03-02T23:59:59";  //締切日の指定 締切日の24時に締め切る　233行目に代入
     $k_teiin ="20";                   //会場の定員　93行目に代入
     $w_teiin ="80";                   //Webの定員　 89行目に代入
     //Zoom URL
@@ -16,7 +15,7 @@
     $User     = "roytnotfcgqxlo";
     $Port     = "5432";
     $Password = "bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
-    //以上計12か所イベントごとに要変更
+    //以上計11か所イベントごとに要変更
     $limit2 =date('n月j日',  strtotime($limit)); 
     $conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     
