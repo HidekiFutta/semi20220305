@@ -17,8 +17,8 @@
     $Port     = "5432";
     $Password = "bdcd362658461f859b4b12571848bd943631b2b5c7429ea05ab2412f6ea3b373";
     //以上計12か所イベントごとに要変更
-    $test =date('n月j日',  strtotime($limit)); 
-    echo $test;
+    //$test =date('n月j日',  strtotime($limit)); 
+    //echo $test;
     $conn = "host=".$Host." "."port=".$Port." "."dbname=".$Database." "."user=".$User." "."password=".$Password;
     
     //  入力値の引継ぎ参考URL： https://gray-code.com/php/make-the-form-vol4/
@@ -92,7 +92,7 @@
                             </label>
                             <label class="contact-skill">
                                 <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
-                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（締切<?php $test?>)</span>
+                                <span class="contact-skill-txt" id="edit_area">会場参加　会員限定先着<?php $k_teiin?>名（締切<?php $limit?>)</span>
                             </label>                        
                         </td>
                     </tr>
