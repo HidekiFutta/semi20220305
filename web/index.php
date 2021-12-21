@@ -8,7 +8,7 @@
     $simekiri="3月2日";               //93,237行目に代入
     $k_teiin ="20";                   //会場の定員　93行目に代入
     $w_teiin ="80";                   //Webの定員　 89行目に代入
-    $test =date('m月d日',  strtotime($limit));
+    $test =date('n月j日',  strtotime($limit));
     echo $test;
     //Zoom URL
     $zoom = "https://us02web.zoom.us/meeting/register/tZMtde-prTMqGdejcSWAxjq9dl0NJ_sMzdko";
