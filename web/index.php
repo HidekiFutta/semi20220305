@@ -3,7 +3,7 @@
 
     //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
     $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意！　52行目に代入
-    $kaisaibi="2022-03-05T17:00:00";  //開催終了後（時間）に受付を停止　244行目に代入
+    $kaisaibi="2021-03-05T17:00:00";  //開催終了後（時間）に受付を停止　244行目に代入
     $limit=   "2021-03-02T23:59:59";  //締切日の指定 締切日の24時に締め切る　235行目に代入
     $k_teiin ="20";                   //会場の定員　95行目に代入
     $w_teiin ="80";                   //Webの定員　91行目に代入
@@ -247,7 +247,7 @@
               if(end2 <= today){// 有効期限の範囲外
                   comment2= "<font color='red'>このイベントは終了しました</font>";
                   document.getElementById("edit_area2").innerHTML = comment2;
-                  //document.getElementById("conf").style.backgroundColor = "lightblue";
+                  document.getElementById("conf").style.backgroundColor = "lightblue";
                   document.getElementById("conf").disabled = true;  //締切後押せなくする
                   
                   //<button style="background-color:red">締　切</button>
