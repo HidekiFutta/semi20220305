@@ -2,14 +2,14 @@
   <?php
 
     //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
-    $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意！　56行目に代入
-    $kaisaibi="2022-03-05T17:00:00";  //開催終了後（時間）に受付を停止　242行目に代入
-    $limit=   "2022-03-02T23:59:59";  //締切日の指定 締切日の24時に締め切る　233行目に代入
-    $k_teiin ="20";                   //会場の定員　93行目に代入
-    $w_teiin ="80";                   //Webの定員　89行目に代入
-    $Tanto_Address = "sahara@daihougi.ne.jp";
+    $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意！　52行目に代入
+    $kaisaibi="2022-03-05T17:00:00";  //開催終了後（時間）に受付を停止　244行目に代入
+    $limit=   "2021-03-02T23:59:59";  //締切日の指定 締切日の24時に締め切る　235行目に代入
+    $k_teiin ="20";                   //会場の定員　95行目に代入
+    $w_teiin ="80";                   //Webの定員　91行目に代入
+    $Tanto_Address = "sahara@daihougi.ne.jp"; //開催担当責任者のメールアドレス　または　ML
     //Zoom URL
-    $zoom = "https://us02web.zoom.us/meeting/register/tZMtde-prTMqGdejcSWAxjq9dl0NJ_sMzdko";
+    $zoom  = "https://us02web.zoom.us/meeting/register/tZMtde-prTMqGdejcSWAxjq9dl0NJ_sMzdko";
     //Heroku- AppName- Resources- Herok Postgres- Setting- Database Credentials から
     $Host     = "ec2-3-230-219-251.compute-1.amazonaws.com"; 
     $Database = "dfbkketl37sb46";
@@ -31,15 +31,15 @@
     session_start();
     $_SESSION["input_token"] = $token; //グローバル変数らしい  
     
-    $_SESSION["title"] = $title;
+    $_SESSION["title"] = $title; 
+    $_SESSION["Tanto_Address"] = $Tanto_Address;
+    $_SESSION["zoom"] = $zoom;
+    $_SESSION["conncon"] = $conn;
     //$_SESSION["kaisaibi"] = $kaisaibi;
     //$_SESSION["limit"] = $limit;
     //$_SESSION["simekiri"] = $simekiri;
     //$_SESSION["k_teiin"] = $k_teiin;
     //$_SESSION["w_teiin"] = $w_teiin;
-    $_SESSION["Tanto_Address"] = $Tanto_Address;
-    $_SESSION["zoom"] = $zoom;
-    $_SESSION["conncon"] = $conn;
   ?>
    
  <!DOCTYPE html>  
@@ -163,7 +163,7 @@
                     </tr>
                 </table>
 
-                <input class="contact-submit" id="comf" type="submit" name="submit" value="確　認" />
+                <input class="contact-submit" id="conf" type="submit" name="submit" value="確　認" />
             </form>
             
             <script language="JavaScript" type="text/javascript">
@@ -247,9 +247,10 @@
               if(end2 <= today){// 有効期限の範囲外
                   comment2= "<font color='red'>このイベントは終了しました</font>";
                   document.getElementById("edit_area2").innerHTML = comment2;
-                  document.getElementById("comf").disabled = true;  //締切後押せなくする
-              }
-                  
+                  document.getElementById("conf").disabled = true;  //締切後押せなくする
+                  document.getElementById("conf").style.backgroundColor = "lightblue";
+                  //<button style="background-color:red">締　切</button>
+              }                 
             // -->
             </script>            
         </div>
