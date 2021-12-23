@@ -247,7 +247,8 @@
               if(end2 <= today){// 有効期限の範囲外
                   comment2= "<font color='red'>このイベントは終了しました</font>";
                   document.getElementById("edit_area2").innerHTML = comment2;
-                  document.getElementById("conf").style.backgroundColor = "gray";
+                  document.getElementById("conf").style.backgroundColor = "gray";  //締切後レイアウトする
+                  document.getElementById("conf").value = "終　了";  //締切後レイアウトする
                   document.getElementById("conf").disabled = true;  //締切後押せなくする
                   
                   //<button style="background-color:red">締　切</button>
