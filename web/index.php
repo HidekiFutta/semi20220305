@@ -91,7 +91,7 @@
                                 <span class="contact-skill-txt">Web参加  先着<?php echo $w_teiin?>名（当日まで受付可）</span>
                             </label>
                             <label class="contact-skill">
-                                <input type="radio" id="kaijyo" name="keitai" value="会場参加" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
+                                <input type="radio" id="kaijyo" name="keitai" value="会場参加" aria-disabled="true" ?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "会場参加" ){ echo 'checked'; } ?>/>
                                 <span class="contact-skill-txt" id="edit_area"><s>会場参加</s>　（Webのみ）</span>
                             </label>                        
                         </td>
