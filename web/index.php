@@ -4,7 +4,7 @@
     //イベントによって変更する6箇所 + ZoomURL + DataBaseのURI5つ
     $title =  "明日から役立つセミナー"; //あまり長くなると折り返すので注意！　52行目に代入
     $kaisaibi="2022-03-05T17:00:00";  //開催終了後（時間）に受付を停止　244行目に代入
-    $limit=   "2022-03-02T23:59:59";  //締切日の指定 締切日の24時に締め切る　235行目に代入
+    $limit=   "2022-03-05T15:59:59";  //締切日の指定 締切日の24時に締め切る　235行目に代入
     $k_teiin ="0";                   //会場の定員　95行目に代入
     $w_teiin ="80";                   //Webの定員　91行目に代入
     $Tanto_Address = "sahara@daihougi.ne.jp"; //開催担当責任者のメルアド　または　ML
@@ -88,7 +88,7 @@
                         <td class="contact-body">
                             <label class="contact-keitai">
                                 <input type="radio" name="keitai" value="Web参加" checked="checked" <?php if( !empty($_POST['keitai']) && $_POST['keitai'] === "Web参加" ){ echo 'checked'; } ?>>
-                                <span class="contact-skill-txt">Web参加のみ  先着<?php echo $w_teiin?>名（会員優先）</span>
+                                <span class="contact-skill-txt">Webのみ  先着<?php echo $w_teiin?>名（会員優先）</span>
                             </label>
                                               
                         </td>
