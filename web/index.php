@@ -55,7 +55,7 @@
     </head>
     <body>
         <div class="contact">
-            <h1 class="contact-ttl" id="edit_area2"><?php echo $title?> 登録フォーム</h1>
+            <h1 class="contact-ttl" id="edit_area2"><?php echo $title?> 終了しました</h1>
          
             <form method="post" action="./check.php">
                 <table class="contact-table">
@@ -160,7 +160,7 @@
                     </tr>
                 </table>
 
-                <input class="contact-submit" id="conf" type="submit" name="submit" value="確　認" />
+               
             </form>
             
             <script language="JavaScript" type="text/javascript">
